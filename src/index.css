@@ -1,0 +1,303 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+  
+  /* Ensure smooth transitions between light and dark mode */
+  .theme-transition {
+    transition: background-color 0.7s ease, color 0.7s ease, border-color 0.7s ease, box-shadow 0.7s ease;
+  }
+}
+
+/* Interactive elements */
+@layer components {
+  .hover-scale {
+    @apply transition-transform duration-300 ease-in-out hover:scale-110;
+  }
+  
+  .hover-shadow {
+    @apply transition-shadow duration-300 hover:shadow-xl;
+  }
+
+  .hover-scale-shadow {
+    @apply transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-xl dark:hover:shadow-indigo-500/30;
+  }
+  
+  /* Typing animation for title */
+  .typing-animation {
+    overflow: hidden;
+    display: inline-block;
+    white-space: nowrap;
+    animation: typing 3.5s steps(40, end);
+    width: 0;
+    animation-fill-mode: forwards;
+  }
+  
+  .typing-animation-subtitle {
+    overflow: hidden;
+    display: inline-block;
+    white-space: nowrap;
+    animation: typing 3.5s steps(40, end);
+    animation-delay: 1s;
+    width: 0;
+    animation-fill-mode: forwards;
+  }
+
+  /* Scale effect for elliptical elements */
+  .elliptical-element {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .elliptical-element:hover {
+    transform: scale(1.15);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Page transition animations */
+.page-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.page-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 500ms, transform 500ms;
+}
+
+/* Dark mode transition */
+.dark-transition {
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* Scroll reveal animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hex-grid {
+  background-image: 
+    radial-gradient(circle at center, rgba(10, 36, 99, 0.1) 0, rgba(10, 36, 99, 0.1) 1px, transparent 1px),
+    radial-gradient(circle at center, rgba(10, 36, 99, 0.05) 0, rgba(10, 36, 99, 0.05) 1px, transparent 1px);
+  background-size: 30px 30px;
+  background-position: 0 0, 15px 15px;
+  transition: background-image 0.5s ease;
+}
+
+.dark .hex-grid {
+  background-image: 
+    radial-gradient(circle at center, rgba(200, 200, 255, 0.1) 0, rgba(200, 200, 255, 0.1) 1px, transparent 1px),
+    radial-gradient(circle at center, rgba(200, 200, 255, 0.05) 0, rgba(200, 200, 255, 0.05) 1px, transparent 1px);
+  background-size: 30px 30px;
+  background-position: 0 0, 15px 15px;
+}
+
+.blockchain-node {
+  position: relative;
+  background: linear-gradient(145deg, rgba(36, 123, 160, 0.8), rgba(27, 153, 139, 0.8));
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(27, 153, 139, 0.6);
+}
+
+.blockchain-node::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: inherit;
+  animation: pulse-ring 2s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+}
+
+.graph-bg {
+  background: radial-gradient(circle, rgba(14, 16, 61, 0.03) 0%, rgba(10, 36, 99, 0.01) 100%);
+  transition: background 0.5s ease;
+}
+
+.dark .graph-bg {
+  background: radial-gradient(circle, rgba(100, 110, 200, 0.05) 0%, rgba(80, 100, 180, 0.02) 100%);
+}
+
+/* Theme loading animation */
+.theme-loading {
+  @apply fixed top-0 left-0 w-full h-full flex items-center justify-center bg-background;
+}
+
+.theme-loading::after {
+  content: "";
+  width: 50px;
+  height: 50px;
+  border: 5px solid #eee;
+  border-top-color: var(--ethos-teal);
+  border-radius: 50%;
+  animation: loading 1s linear infinite;
+}
+
+@keyframes loading {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Add fade in animation for page elements */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.fade-in-delay-1 {
+  animation: fadeIn 0.6s ease-out 0.2s forwards;
+  opacity: 0;
+}
+
+.fade-in-delay-2 {
+  animation: fadeIn 0.6s ease-out 0.4s forwards;
+  opacity: 0;
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.8); opacity: 0.8; }
+  70% { transform: scale(1.3); opacity: 0; }
+  100% { transform: scale(0.8); opacity: 0; }
+}
+
+/* Create a smoother page transition effect */
+@keyframes pageTransition {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page-transition-enter {
+  animation: pageTransition 0.5s ease forwards;
+}
+
+/* Improve hover effects */
+.hover-glow {
+  @apply transition-all duration-300;
+}
+
+.hover-glow:hover {
+  @apply shadow-lg dark:shadow-indigo-500/20;
+  transform: translateY(-3px);
+}
+
+/* Typing animation keyframes */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
