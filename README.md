@@ -1,34 +1,32 @@
-# 🚀 EthosChain – Decentralized Ethical AI Training & Auditing Platform
-
+🚀 EthosChain – Decentralized Ethical AI Training & Auditing Platform
 EthosChain ensures AI models are trained on ethically sourced, bias-checked, and consent-driven datasets by leveraging blockchain transparency and decentralized auditing.
 
----
+📦 Tech Stack
+Smart Contracts: Solidity + Hardhat (Ethereum)
 
-## 📦 Tech Stack
+Frontend: React.js + TailwindCSS + Ethers.js
 
-- **Smart Contracts:** Solidity + Hardhat (Ethereum)
-- **Frontend:** React.js + TailwindCSS + Ethers.js
-- **Storage:** IPFS (for dataset metadata)
-- **DAO & Token:** Aragon SDK + ERC-20 ($ETHOS)
-- **Blockchain Interaction:** Web3.js / Ethers.js
+Storage: IPFS (for dataset metadata)
 
----
+DAO & Token: Aragon SDK + ERC-20 ($ETHOS)
 
-## 🔧 Prerequisites
+Blockchain Interaction: Web3.js / Ethers.js
 
-- [Node.js & npm](https://nodejs.org/)
-- [Hardhat](https://hardhat.org/)
-- Metamask wallet (connected to Goerli or other testnet)
-- Git
+🔧 Prerequisites
+Node.js & npm
 
----
+Hardhat
 
-## 🛠️ Setup Guide
+MetaMask wallet (connected to Goerli or other testnet)
 
-### 1. Clone Repository
+Git
 
-```bash
-git clone https://github.com/tchandok30/ethoschain.git
+🛠️ Setup Guide
+1. Clone Repository
+bash
+Copy
+Edit
+git clone https://github.com/tchandok30/ethos-chain.git
 cd ethoschain
 2. Install All Dependencies
 bash
@@ -42,7 +40,7 @@ Edit
 cd smart-contracts
 npm install
 npx hardhat compile
-npx hardhat run scripts/deploy.js --network goerli
+npx hardhat run scripts/deploy.js --network localhost
 💡 Save the deployed contract address for frontend use.
 
 4. Configure Frontend
@@ -78,10 +76,12 @@ Upload dataset → Metadata stored on IPFS → Hash stored on Ethereum
 
 DAO members audit for bias, consent, and legality → Vote using $ETHOS
 
-Developers can browse/purchase ethically verified datasets/models
+Developers browse/purchase ethically verified datasets/models
 
 Royalties are automatically sent to original data creators
 
 📄 License
 MIT © 2025 EthosChain Team
 
+🤝 Contributing
+Pull requests are welcome! Please open an issue first for major suggestions.
