@@ -80,8 +80,5 @@ Developers browse/purchase ethically verified datasets/models
 
 Royalties are automatically sent to original data creators
 
-📄 License
-MIT © 2025 EthosChain Team
-
 🤝 Contributing
 Pull requests are welcome! Please open an issue first for major suggestions.
